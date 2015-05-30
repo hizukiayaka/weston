@@ -126,6 +126,7 @@ AC_CHECK_DECL(CLOCK_MONOTONIC,[],
 	      [AC_MSG_ERROR("CLOCK_MONOTONIC is needed to compile weston")],
 	      [[#include <time.h>]])
 
+AC_CHECK_HEADERS([error.h])
 AC_CHECK_FUNCS([mkostemp strchrnul initgroups posix_fallocate])
 
 # check for libdrm as a build-time dependency only

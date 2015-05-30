@@ -33,7 +33,6 @@
 #include <poll.h>
 #include <errno.h>
 
-#include <error.h>
 #include <getopt.h>
 
 #include <sys/types.h>
@@ -59,6 +58,7 @@
 #endif
 
 #include "weston-launch.h"
+#include "weston-error.h"
 
 #define DRM_MAJOR 226
 

@@ -94,6 +94,7 @@ foreach func : optional_libc_funcs
 endforeach
 
 optional_system_headers = [
+	'error.h',
 	'linux/sync_file.h'
 ]
 foreach hdr : optional_system_headers
