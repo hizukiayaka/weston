@@ -472,10 +472,15 @@ if get_option('renderer-gl')
 endif
 
 if get_option('weston-launch')
-	dep_pam = cc.find_library('pam')
+	if get_option('pam')
+		dep_pam = cc.find_library('pam')
+		config_h.set('HAVE_PAM', '1')
 
-	if not cc.has_function('pam_open_session', dependencies: dep_pam)
-		error('pam_open_session not found for weston-launch')
+		if not cc.has_function('pam_open_session', dependencies: dep_pam)
+			error('pam_open_session not found for weston-launch')
+		endif
+	else
+		dep_pam = ''
 	endif
 
 	executable(

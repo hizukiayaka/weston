@@ -73,6 +73,13 @@ option(
 )
 
 option(
+	'pam',
+	type: 'boolean',
+	value: true,
+	description: 'Weston launcher: support for starting with a non-root user'
+)
+
+option(
 	'xwayland',
 	type: 'boolean',
 	value: true,
